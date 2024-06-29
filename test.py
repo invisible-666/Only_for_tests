@@ -11,11 +11,9 @@ def create_collage(image_paths):
         images.append(image)
 
     num_images = len(images)
-    num_cols = floor(sqrt(num_images)) # Поиск количество картинок по горизонтали
-    num_rows = ceil(num_images/num_cols)  # Поиск количество картинок по вертикали
-    # Создание пустого коллажа
+    num_cols = floor(sqrt(num_images))
+    num_rows = ceil(num_images/num_cols)
     collage = np.zeros((num_rows * images[0].shape[0], num_cols * images[0].shape[1], 3), dtype=np.uint8)
-    # Размещение изображений на коллаже
     for i, image in enumerate(images):
         row = i // num_cols
         col = i % num_cols
